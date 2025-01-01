@@ -1,18 +1,20 @@
 #include <iostream>
 using namespace std;
 int HCF(int n,int m) {
-   if(n%1==0 and m%==0){
-    return 1;
+  if(m>n){
+    return HCF(m,n);
+  }
+   if(m==0){
+    return n;
    }
    else{
-     return (n%min(n,m)==0&& m%min(n,m)==0)?min(n,m):HCF(min(n,m)-1,max(n,m));
+    return HCF(m,n%m);
    }
 }
-
 int main() {
     int n,m;
     cout << "Enter the Number : ";
     cin >> n>>m;
-   HCF(n,m);
+   cout<<HCF(n,m);
     return 0;
 }
